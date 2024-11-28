@@ -1,0 +1,116 @@
+/* Kalenderstripe */
+#date-selector {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+#date-selector .date-square {
+    background: white;
+    color: #333;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    position: relative;
+}
+
+#date-selector .date-square:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+#date-selector .date-square .date {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-weight: bold;
+    font-size: 0.8em;
+    border: 2px solid #e74c3c;
+    padding: 2px;
+    border-radius: 3px;
+    background: white;
+}
+
+#date-selector .date-square .time {
+    margin-top: auto;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+/* Animated Text */
+#animated-text {
+    font-size: 1.2em;
+    color: #2c3e50;
+    margin: 20px 0;
+    animation: fadeInOut 3s infinite;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+
+/* Generelle forbedringer */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+#app {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #2c3e50;
+}
+
+h2, h3 {
+    color: #34495e;
+}
+
+#countdown {
+    font-size: 1.5em;
+    color: #e74c3c;
+    margin: 10px 0;
+}
+
+#hints-container {
+    margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    #app {
+        padding: 10px;
+    }
+
+    #date-selector .date-square {
+        width: 60px;
+        height: 60px;
+    }
+
+    #countdown {
+        font-size: 1.2em;
+    }
+}
