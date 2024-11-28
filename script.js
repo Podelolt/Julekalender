@@ -37,7 +37,6 @@ function renderDateSelector() {
         // Legg til klikking for å starte nedtelling for valgt dato
         button.addEventListener("click", () => {
             startCountdown(event.date);
-            countdownElement.innerHTML = `Nedtelling for: ${event.description}`;
         });
 
         dateSelector.appendChild(button);
