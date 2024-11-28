@@ -4,12 +4,19 @@
 const countdownElement = document.getElementById("countdown");
 const hintsElement = document.getElementById("hints");
 const dateSelector = document.createElement("div"); // Opprett stripe for datovalg
-document.getElementById("app").appendChild(dateSelector);
+document.getElementById("countdown-container").appendChild(dateSelector);
 
 // Liste over datoer for nedtelling
 const eventDates = [
-    { date: new Date("2024-12-03T18:00:00"), description: "Overraskelse 1" },
+    { date: new Date("2024-12-01T18:00:00"), description: "Overraskelse 1" },
     // You can add more dates here
+];
+
+// Hint schedule
+const hintSchedule = [
+    { date: new Date("2024-11-27T00:00:00"), hint: "🧦" },
+    { date: new Date("2024-11-29T00:00:00"), hint: "🩲" },
+    { date: new Date("2024-12-01T15:00:00"), hint: "🎬" },
 ];
 
 // Dynamisk opprettelse av datostripen
@@ -51,7 +58,7 @@ function startCountdown(targetDate) {
 
         if (difference <= 0) {
             clearInterval(interval);
-            countdownElement.innerHTML = "Tid for en overraskelse! 🎉";
+            countdownElement.innerHTML = "Filmkveeeeeeld!🎬 (med noen små overraskelser...)";
             return;
         }
 
@@ -64,9 +71,33 @@ function startCountdown(targetDate) {
     }, 1000);
 }
 
-// Hint-seksjon
-const hints = ["🎄", "❄️", "🎁"]; // Hint for neste overraskelse
-hintsElement.innerHTML = hints.join(" ");
+// Update hints based on schedule
+function updateHints() {
+    const now = new Date();
+    hintsElement.innerHTML = ''; // Clear existing hints
+    hintSchedule.forEach(hintObj => {
+        const hintBox = document.createElement('div');
+        hintBox.className = 'hint-box';
+        if (now >= hintObj.date) {
+            hintBox.textContent = hintObj.hint;
+        } else {
+            hintBox.textContent = `⏳ ${hintObj.date.toLocaleDateString()}`;
+        }
+        hintsElement.appendChild(hintBox);
+    });
+}
+
+// Show main content after intro
+function showMainContent() {
+    const introScreen = document.getElementById('intro-screen');
+    const appContent = document.getElementById('app');
+    introScreen.addEventListener('animationend', () => {
+        introScreen.style.display = 'none';
+        appContent.classList.remove('hidden');
+    });
+}
 
 // Aktiver datovalg
 renderDateSelector();
+updateHints();
+showMainContent();

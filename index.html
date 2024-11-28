@@ -5,28 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julekalender</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <!-- Intro Screen -->
+    <div id="intro-screen">
         <h1>Martines Julekalender!! 🎄</h1>
-        
+    </div>
+
+    <!-- Main Content -->
+    <div id="app" class="hidden">
         <!-- Nedtelling -->
         <div id="countdown-container">
             <h2>Du blir hentet om...:</h2>
-            <div id="countdown">Velg dato</div>
+            <div id="countdown">Trykk på dato om det passer</div>
+            <!-- Date Selector will be appended here -->
         </div>
 
-       
+        <!-- Gingerbread House -->
+        <img id="gingerbread-house" src="Bilder/Gingerbreadhouse.png" alt="Gingerbread House">
 
         <!-- Hint -->
         <div id="hints-container">
             <h3>Hint:</h3>
-            <div id="hints">Ingen hint tilgjengelig enda!</div>
+            <div id="hints"></div>
         </div>
-
-         <!-- Animated Text -->
-         <div id="animated-text">Velg en dato</div>
     </div>
+
+    <!-- Snowflakes -->
+    <div class="snowflake" style="left: 10%; animation-duration: 8s;"></div>
+    <div class="snowflake" style="left: 20%; animation-duration: 10s;"></div>
+    <div class="snowflake" style="left: 30%; animation-duration: 12s;"></div>
+    <div class="snowflake" style="left: 40%; animation-duration: 14s;"></div>
+    <div class="snowflake" style="left: 50%; animation-duration: 16s;"></div>
+    <div class="snowflake" style="left: 60%; animation-duration: 18s;"></div>
+    <div class="snowflake" style="left: 70%; animation-duration: 20s;"></div>
+    <div class="snowflake" style="left: 80%; animation-duration: 22s;"></div>
+    <div class="snowflake" style="left: 90%; animation-duration: 24s;"></div>
 
     <script src="script.js"></script>
 </body>
