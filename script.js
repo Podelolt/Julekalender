@@ -6,7 +6,6 @@ document.getElementById("countdown-container").appendChild(dateSelector);
 
 // Intro Screen
 const introScreen = document.getElementById("intro-screen");
-const revealButton = document.getElementById("reveal-button");
 const app = document.getElementById("app");
 
 // Snøstorm-animasjon
@@ -33,15 +32,14 @@ function createSnowstorm() {
 setTimeout(() => {
     createSnowstorm();
     setTimeout(() => {
-        revealButton.style.display = "block";
+        introScreen.style.transition = "opacity 1s ease";
+        introScreen.style.opacity = "0";
+        setTimeout(() => {
+            introScreen.style.display = "none";
+            app.style.display = "block";
+        }, 1000); // Vent til fade-out er ferdig
     }, 4000); // Vent til snøen har samlet seg
 }, 1000);
-
-// Knapp for å avsløre hovedinnhold
-revealButton.addEventListener("click", () => {
-    introScreen.style.display = "none";
-    app.style.display = "block";
-});
 
 // Liste over datoer for nedtelling
 const eventDates = [
