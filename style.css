@@ -51,6 +51,7 @@ body {
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
     border: 2px solid #e74c3c;
+    margin-right: 10px;
 }
 
 .date-text {
@@ -73,6 +74,7 @@ body {
     border-radius: 5px;
     text-align: center;
     font-size: 0.9em;
+    margin-top: 20px;
 }
 
 /* Stack hint boxes horizontally */
@@ -157,3 +159,24 @@ body {
 }
 
 /* Adjust the size and color of the snowflakes as needed */
+
+h1 {
+    font-size: 2,7em;
+    margin-bottom: 35px;
+}
+
+.countdown {
+    margin-top: 10px;
+}
+
+#date-selector {
+    margin-top: 10px;
+}
+
+.date-square {
+    margin-bottom: 40px;
+}
+
+.hint-box {
+    margin-top: 10px;
+}
