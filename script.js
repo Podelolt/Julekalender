@@ -1,5 +1,3 @@
-// Velkommen til JavaScript-delen av julekalenderen din!
-
 // Finn HTML-elementer
 const countdownElement = document.getElementById("countdown");
 const hintsElement = document.getElementById("hints");
@@ -86,25 +84,6 @@ function updateHints() {
         hintsElement.appendChild(hintBox);
     });
 }
-
-// Remove any snowflake creation from the main content
-function showMainContent() {
-    const introScreen = document.getElementById('intro-screen');
-    const appContent = document.getElementById('app');
-
-    // Directly show the main content without any button
-    introScreen.style.display = 'none';
-    appContent.classList.remove('hidden');
-    appContent.style.opacity = '1'; // Fade in main content
-}
-
-// Ensure that snowflakes are only created during the intro screen
-function startIntro() {
-    showMainContent(); // Show main content immediately
-}
-
-// Call startIntro to initiate the intro screen
-startIntro();
 
 // Aktiver datovalg
 renderDateSelector();

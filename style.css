@@ -1,4 +1,4 @@
-/* General Styles */
+/* Generelle forbedringer */
 body {
     font-family: 'Mountains of Christmas', cursive;
     margin: 0;
@@ -10,118 +10,54 @@ body {
     background-image: url('https://www.transparenttextures.com/patterns/bright-squares.png'); /* Festive background pattern */
 }
 
-/* Intro Screen */
-#intro-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #c0392b;
-    color: #fff;
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: center;
-    align-items: center;
-    font-family: 'Mountains of Christmas', cursive;
-    font-size: 1.5em;
-    text-align: center;
-    padding: 20px;
-    z-index: 1000;
-    overflow: hidden;
-}
-
-#intro-screen h1 {
-    animation: aggressivePop 1s ease-out forwards; /* Aggressive pop out */
-}
-
-@keyframes aggressivePop {
-    0% { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1.5); opacity: 1; }
-}
-
-/* Gingerbread House */
-#gingerbread-house {
-    width: 80px; /* Smaller size for mobile */
-    height: auto;
-    margin: 20px 0; /* Add margin for spacing */
-    display: block;
-}
-
-/* Main Content */
 #app {
-    max-width: 90%; /* Use more screen width */
-    margin: 20px auto;
-    padding: 20px;
-    background: rgba(231, 76, 60, 0.9); /* Festive red background with transparency */
+    max-width: 390px; /* Tilpasset iPhone skjermbredde */
+    margin: 0 auto;
+    padding: 15px;
+    background: #e74c3c; /* Festive red background */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    opacity: 0; /* Start hidden */
-    transition: opacity 1s ease-in-out; /* Smooth transition */
 }
 
-/* Date Selector */
+#countdown {
+    font-size: 1.3em; /* Justert for liten skjerm */
+    color: #fff;
+    margin: 10px 0;
+}
+
+/* Kalenderstripe */
 #date-selector {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
-    margin: 20px 0;
+    gap: 8px;
+    margin: 15px 0;
 }
 
-#date-selector .date-square {
+.date-square {
     background: #fff8e1; /* Light festive background */
     color: #333;
-    width: 70px; /* Adjusted for mobile */
-    height: 70px; /* Adjusted for mobile */
+    width: 75px; /* Optimalisert for liten skjerm */
+    height: 75px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 5px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 0.9em;
+    font-size: 0.8em;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
-    position: relative;
-    border: 2px solid #e74c3c; /* Red border for festive look */
-}
-
-#date-selector .date-square:hover {
-    background: #ffe0b2; /* Slightly darker on hover */
-    transform: scale(1.05);
+    border: 2px solid #e74c3c;
 }
 
 /* Hint Box */
 .hint-box {
     background: #fff8e1;
     color: #333;
-    padding: 10px;
+    padding: 8px;
     margin: 5px;
     border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    font-size: 1em;
-    border: 2px solid #e74c3c;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    #app {
-        padding: 10px;
-    }
-
-    #date-selector .date-square {
-        width: 60px; /* Smaller for mobile */
-        height: 60px; /* Smaller for mobile */
-    }
-
-    #countdown {
-        font-size: 1.2em;
-    }
-
-    #gingerbread-house {
-        width: 60px; /* Smaller size for mobile */
-    }
+    font-size: 0.9em;
 }

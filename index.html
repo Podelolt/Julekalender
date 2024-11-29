@@ -8,24 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Intro Screen -->
-    <div id="intro-screen">
-        <h1>Martines Julekalender</h1>
-        <!-- Gingerbread House positioned at the bottom -->
-        <img id="gingerbread-house" src="Bilder/Gingerbreadhouse.png" alt="Gingerbread House">
-        <!-- Main Content -->
-        <div id="app" class="hidden">
-            <div id="countdown-container">
-                <h2>Du blir hentet om...:</h2>
-                <div id="countdown">Trykk på dato om det passer</div>
-                <div id="date-selector"></div> <!-- Date Selector will be appended here -->
-            </div>
-            <div id="hints-container">
-                <h3>Hint:</h3>
-                <div id="hints"></div>
-            </div>
+    <!-- Main Content -->
+    <div id="app">
+        <!-- Nedtelling -->
+        <div id="countdown-container">
+            <h2>Du blir hentet om...:</h2>
+            <div id="countdown">Trykk på dato om det passer</div>
+            <!-- Date Selector will be appended here -->
+        </div>
+
+        <!-- Hint -->
+        <div id="hints-container">
+            <h3>Hint:</h3>
+            <div id="hints"></div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
