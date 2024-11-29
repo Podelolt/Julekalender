@@ -5,9 +5,10 @@ body {
     padding: 0;
     box-sizing: border-box;
     background-color: #c0392b; /* Vibrant Christmas red */
-    color: #fff; /* White text */
+    color: #fff;
     line-height: 1.6;
     background-image: url('https://www.transparenttextures.com/patterns/bright-squares.png'); /* Festive background pattern */
+    overflow: hidden;
 }
 
 #app {
@@ -60,4 +61,71 @@ body {
     border-radius: 5px;
     text-align: center;
     font-size: 0.9em;
+}
+
+/* Intro Screen */
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #c0392b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 100;
+}
+
+#intro-title {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+#snowstorm {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 99;
+}
+
+#reveal-button {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    cursor: pointer;
+    z-index: 101;
+    margin-top: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.snowflake {
+    position: absolute;
+    top: -10px;
+    font-size: 1em;
+    color: #fff;
+    animation: fall linear;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
 }
