@@ -27,7 +27,6 @@ function createSnowstorm() {
         });
     }
 }
-
 // Start intro
 setTimeout(() => {
     createSnowstorm();
@@ -49,17 +48,37 @@ const eventDates = [
 // Hint schedule
 const hintSchedule = [
     { date: new Date("2024-11-27T00:00:00"), hint: "🧦" },
-    { date: new Date("2024-11-29T00:00:00"), hint: "🩲" },
+    { date: new Date("2024-11-30T08:00:00"), hint: "🩲" },
     { date: new Date("2024-12-01T15:00:00"), hint: "🎬" },
+];
+
+// Liste over måneder på norsk
+const months = [
+    "Jan", "Feb", "Mar", "Apr", "Mai", "Juni",
+    "Juli", "Aug", "Sep", "Okt", "Nov", "Des"
+];
+
+// Liste over ukedager på norsk
+const weekdays = [
+    "Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"
 ];
 
 // Dynamisk opprettelse av datostripen
 function renderDateSelector() {
     dateSelector.id = "date-selector";
+
     eventDates.forEach((event) => {
         const button = document.createElement("div");
         button.className = "date-square";
-        button.innerHTML = `<div>${event.date.toLocaleDateString()}</div>`;
+
+        // Format the date as "weekday d m" (e.g., "Søndag 1 Des")
+        const formattedDate = `${weekdays[event.date.getDay()]} ${event.date.getDate()}. ${months[event.date.getMonth()]}`;
+        
+        const dateText = document.createElement("div");
+        dateText.className = "date-text";
+        dateText.textContent = formattedDate;
+
+        button.appendChild(dateText);
         button.addEventListener("click", () => startCountdown(event.date));
         dateSelector.appendChild(button);
     });
@@ -97,3 +116,26 @@ function updateHints() {
 
 renderDateSelector();
 updateHints();
+
+// Create snowflakes on the main screen
+function createSnowflakes() {
+    const mainScreen = document.getElementById("main-screen");
+
+    for (let i = 0; i < 50; i++) {
+        const snowflake = document.createElement("div");
+        snowflake.className = "snowflake";
+        snowflake.innerHTML = "&#10052;"; // Unicode snowflake character
+
+        const randomX = Math.floor(Math.random() * window.innerWidth);
+        const randomDelay = Math.random() * 10;
+        
+        snowflake.style.left = `${randomX}px`;
+        snowflake.style.animationDelay = `${randomDelay}s`;
+
+        mainScreen.appendChild(snowflake);
+    }
+}
+
+// Call the function to create snowflakes after the intro screen
+createSnowflakes();
+

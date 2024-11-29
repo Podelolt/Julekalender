@@ -12,7 +12,8 @@ body {
 }
 
 #app {
-    max-width: 390px; /* Tilpasset iPhone skjermbredde */
+    width: 90%;
+    height: 90vh;
     margin: 0 auto;
     padding: 15px;
     background: #e74c3c; /* Festive red background */
@@ -52,8 +53,19 @@ body {
     border: 2px solid #e74c3c;
 }
 
+.date-text {
+    background-color: #f9c5c5; /* Light red background */
+    color: #c0392b; /* Dark red text color */
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 1.5em;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
 /* Hint Box */
 .hint-box {
+    display: inline-block;
     background: #fff8e1;
     color: #333;
     padding: 8px;
@@ -61,6 +73,15 @@ body {
     border-radius: 5px;
     text-align: center;
     font-size: 0.9em;
+}
+
+/* Stack hint boxes horizontally */
+.hint-box:first-child {
+    margin-left: 0;
+}
+
+.hint-box:last-child {
+    margin-right: 0;
 }
 
 /* Intro Screen */
@@ -97,18 +118,6 @@ body {
     z-index: 99;
 }
 
-#reveal-button {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-size: 1.5em;
-    padding: 10px 20px;
-    cursor: pointer;
-    z-index: 101;
-    margin-top: 20px;
-}
-
 /* Animations */
 @keyframes fadeIn {
     to {
@@ -129,3 +138,22 @@ body {
         transform: translateY(110vh);
     }
 }
+
+/* Snowflake animation */
+@keyframes snowfall {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.snowflake {
+    position: absolute;
+    color: #fff;
+    font-size: 1em;
+    animation: snowfall 10s linear infinite;
+}
+
+/* Adjust the size and color of the snowflakes as needed */
