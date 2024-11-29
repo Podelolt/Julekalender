@@ -102,6 +102,41 @@ function startCountdown(targetDate) {
     }, 1000);
 }
 
+// Start hints countdown
+function startHintsCountdown(targetDate, hintElement) {
+    const interval = setInterval(() => {
+        const now = new Date();
+        const diff = targetDate - now;
+        if (diff <= 0) {
+            clearInterval(interval);
+            hintElement.textContent = "⏳";
+        } else {
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+            hintElement.textContent = `${hours} timer ${minutes} min ${seconds} sek igjen`;
+        }
+    }, 1000);
+}
+
+// Call the function to start the hints countdown for each hint
+hintSchedule.forEach((hintObj) => {
+    const hintBox = document.createElement("div");
+    hintBox.className = "hint-box";
+    hintsElement.appendChild(hintBox);
+
+    const hintCountdownElement = document.createElement("div");
+    hintCountdownElement.className = "hint-countdown";
+    hintBox.appendChild(hintCountdownElement);
+
+    const hintTextElement = document.createElement("div");
+    hintTextElement.className = "hint-text";
+    hintTextElement.textContent = hintObj.hint;
+    hintBox.appendChild(hintTextElement);
+
+    startHintsCountdown(hintObj.date, hintCountdownElement);
+});
+
 // Oppdater hints
 function updateHints() {
     const now = new Date();
@@ -109,7 +144,16 @@ function updateHints() {
     hintSchedule.forEach((hintObj) => {
         const hintBox = document.createElement("div");
         hintBox.className = "hint-box";
-        hintBox.textContent = now >= hintObj.date ? hintObj.hint : `⏳ ${hintObj.date.toLocaleDateString()}`;
+
+        // Calculate the time remaining until the hint date
+        const timeDiff = hintObj.date - now;
+        const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+        // Display the countdown in the hint box
+        hintBox.textContent = now >= hintObj.date ? hintObj.hint : `⏳ ${days}d ${hours}h ${minutes}m ${seconds}s`;
         hintsElement.appendChild(hintBox);
     });
 }
