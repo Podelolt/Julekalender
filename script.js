@@ -87,17 +87,25 @@ function updateHints() {
     });
 }
 
-// Show main content after intro
+// Remove any snowflake creation from the main content
 function showMainContent() {
     const introScreen = document.getElementById('intro-screen');
     const appContent = document.getElementById('app');
-    introScreen.addEventListener('animationend', () => {
-        introScreen.style.display = 'none';
-        appContent.classList.remove('hidden');
-    });
+
+    // Directly show the main content without any button
+    introScreen.style.display = 'none';
+    appContent.classList.remove('hidden');
+    appContent.style.opacity = '1'; // Fade in main content
 }
+
+// Ensure that snowflakes are only created during the intro screen
+function startIntro() {
+    showMainContent(); // Show main content immediately
+}
+
+// Call startIntro to initiate the intro screen
+startIntro();
 
 // Aktiver datovalg
 renderDateSelector();
 updateHints();
-showMainContent();

@@ -15,12 +15,16 @@
     text-align: center;
     padding: 20px;
     z-index: 1000;
-    animation: fadeOut 3s forwards 2s; /* Fade out after 2 seconds */
+    overflow: hidden;
 }
 
-@keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; visibility: hidden; }
+#intro-screen h1 {
+    animation: aggressivePop 1s ease-out forwards; /* Aggressive pop out */
+}
+
+@keyframes aggressivePop {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1.5); opacity: 1; }
 }
 
 /* Hide main content initially */
@@ -92,23 +96,6 @@
     50% { opacity: 1; }
 }
 
-/* Snow Animation */
-@keyframes snow {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100vh); }
-}
-
-.snowflake {
-    position: absolute;
-    top: -10px;
-    width: 10px;
-    height: 10px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.8;
-    animation: snow 10s linear infinite;
-}
-
 /* Gingerbread House */
 #gingerbread-house {
     width: 100px;
@@ -150,6 +137,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out; /* Smooth transition */
 }
 
 h1 {
@@ -188,4 +177,14 @@ h2, h3 {
     #countdown {
         font-size: 1.2em;
     }
+}
+
+/* New class for snow fill animation */
+.snow-fill {
+    animation: fillSnow 5s forwards; /* Fill with snow over 5 seconds */
+}
+
+@keyframes fillSnow {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }
