@@ -11,50 +11,21 @@
     <!-- Intro Screen -->
     <div id="intro-screen">
         <h1>Martines Julekalender</h1>
-        <!-- Snowflakes for intro -->
-        <div class="snowflake" style="left: 10%; animation-duration: 8s;"></div>
-        <div class="snowflake" style="left: 20%; animation-duration: 10s;"></div>
-        <div class="snowflake" style="left: 30%; animation-duration: 12s;"></div>
-        <div class="snowflake" style="left: 40%; animation-duration: 14s;"></div>
-        <div class="snowflake" style="left: 50%; animation-duration: 16s;"></div>
-        <div class="snowflake" style="left: 60%; animation-duration: 18s;"></div>
-        <div class="snowflake" style="left: 70%; animation-duration: 20s;"></div>
-        <div class="snowflake" style="left: 80%; animation-duration: 22s;"></div>
-        <div class="snowflake" style="left: 90%; animation-duration: 24s;"></div>
-        <!-- Reveal Button -->
-        <button id="reveal-button">🌬️</button>
-    </div>
-
-    <!-- Main Content -->
-    <div id="app" class="hidden">
-        <!-- Nedtelling -->
-        <div id="countdown-container">
-            <h2>Du blir hentet om...:</h2>
-            <div id="countdown">Trykk på dato om det passer</div>
-            <!-- Date Selector will be appended here -->
-        </div>
-
-        <!-- Gingerbread House -->
+        <!-- Gingerbread House positioned at the bottom -->
         <img id="gingerbread-house" src="Bilder/Gingerbreadhouse.png" alt="Gingerbread House">
-
-        <!-- Hint -->
-        <div id="hints-container">
-            <h3>Hint:</h3>
-            <div id="hints"></div>
+        <!-- Main Content -->
+        <div id="app" class="hidden">
+            <div id="countdown-container">
+                <h2>Du blir hentet om...:</h2>
+                <div id="countdown">Trykk på dato om det passer</div>
+                <div id="date-selector"></div> <!-- Date Selector will be appended here -->
+            </div>
+            <div id="hints-container">
+                <h3>Hint:</h3>
+                <div id="hints"></div>
+            </div>
         </div>
-
-        <!-- Snowflakes for main content -->
-        <div class="snowflake" style="left: 15%; animation-duration: 12s;"></div>
-        <div class="snowflake" style="left: 25%; animation-duration: 14s;"></div>
-        <div class="snowflake" style="left: 35%; animation-duration: 16s;"></div>
-        <div class="snowflake" style="left: 45%; animation-duration: 18s;"></div>
-        <div class="snowflake" style="left: 55%; animation-duration: 20s;"></div>
-        <div class="snowflake" style="left: 65%; animation-duration: 22s;"></div>
-        <div class="snowflake" style="left: 75%; animation-duration: 24s;"></div>
-        <div class="snowflake" style="left: 85%; animation-duration: 26s;"></div>
-        <div class="snowflake" style="left: 95%; animation-duration: 28s;"></div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>

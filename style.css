@@ -1,3 +1,15 @@
+/* General Styles */
+body {
+    font-family: 'Mountains of Christmas', cursive;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #c0392b; /* Vibrant Christmas red */
+    color: #fff; /* White text */
+    line-height: 1.6;
+    background-image: url('https://www.transparenttextures.com/patterns/bright-squares.png'); /* Festive background pattern */
+}
+
 /* Intro Screen */
 #intro-screen {
     position: fixed;
@@ -8,6 +20,7 @@
     background-color: #c0392b;
     color: #fff;
     display: flex;
+    flex-direction: column; /* Stack elements vertically */
     justify-content: center;
     align-items: center;
     font-family: 'Mountains of Christmas', cursive;
@@ -27,12 +40,28 @@
     100% { transform: scale(1.5); opacity: 1; }
 }
 
-/* Hide main content initially */
-.hidden {
-    display: none;
+/* Gingerbread House */
+#gingerbread-house {
+    width: 80px; /* Smaller size for mobile */
+    height: auto;
+    margin: 20px 0; /* Add margin for spacing */
+    display: block;
 }
 
-/* Kalenderstripe */
+/* Main Content */
+#app {
+    max-width: 90%; /* Use more screen width */
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(231, 76, 60, 0.9); /* Festive red background with transparency */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    opacity: 0; /* Start hidden */
+    transition: opacity 1s ease-in-out; /* Smooth transition */
+}
+
+/* Date Selector */
 #date-selector {
     display: flex;
     justify-content: center;
@@ -44,8 +73,8 @@
 #date-selector .date-square {
     background: #fff8e1; /* Light festive background */
     color: #333;
-    width: 80px;
-    height: 80px;
+    width: 70px; /* Adjusted for mobile */
+    height: 70px; /* Adjusted for mobile */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -64,46 +93,6 @@
     transform: scale(1.05);
 }
 
-#date-selector .date-square .date {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    font-weight: bold;
-    font-size: 0.8em;
-    border: 2px solid #e74c3c;
-    padding: 2px;
-    border-radius: 3px;
-    background: white;
-}
-
-#date-selector .date-square .time {
-    margin-top: auto;
-    font-size: 0.7em;
-    text-align: center;
-}
-
-/* Animated Text */
-#animated-text {
-    font-size: 1.2em;
-    color: #fff; /* White text */
-    margin: 20px 0;
-    animation: fadeInOut 3s infinite;
-    font-family: 'Mountains of Christmas', cursive;
-}
-
-@keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-}
-
-/* Gingerbread House */
-#gingerbread-house {
-    width: 100px;
-    height: auto;
-    margin: 20px auto;
-    display: block;
-}
-
 /* Hint Box */
 .hint-box {
     background: #fff8e1;
@@ -117,52 +106,6 @@
     border: 2px solid #e74c3c;
 }
 
-/* Generelle forbedringer */
-body {
-    font-family: 'Mountains of Christmas', cursive;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #c0392b; /* Vibrant Christmas red */
-    color: #fff; /* White text */
-    line-height: 1.6;
-    background-image: url('https://www.transparenttextures.com/patterns/bright-squares.png'); /* Festive background pattern */
-}
-
-#app {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background: #e74c3c; /* Festive red background */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    opacity: 0; /* Start hidden */
-    transition: opacity 1s ease-in-out; /* Smooth transition */
-}
-
-h1 {
-    color: #fff; /* White text */
-    font-size: 2em;
-}
-
-h2, h3 {
-    color: #fff; /* White text */
-}
-
-#countdown {
-    font-size: 1.5em;
-    color: #fff; /* White text */
-    margin: 10px 0;
-}
-
-#hints-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 /* Responsive adjustments */
 @media (max-width: 600px) {
     #app {
@@ -170,21 +113,15 @@ h2, h3 {
     }
 
     #date-selector .date-square {
-        width: 60px;
-        height: 60px;
+        width: 60px; /* Smaller for mobile */
+        height: 60px; /* Smaller for mobile */
     }
 
     #countdown {
         font-size: 1.2em;
     }
-}
 
-/* New class for snow fill animation */
-.snow-fill {
-    animation: fillSnow 5s forwards; /* Fill with snow over 5 seconds */
-}
-
-@keyframes fillSnow {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
+    #gingerbread-house {
+        width: 60px; /* Smaller size for mobile */
+    }
 }
