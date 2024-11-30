@@ -161,8 +161,16 @@ body {
 /* Adjust the size and color of the snowflakes as needed */
 
 h1 {
-    font-size: 2,7em;
+    font-size: 2.5em;
     margin-bottom: 35px;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
 }
 
 .countdown {

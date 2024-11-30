@@ -158,6 +158,9 @@ function updateHints() {
     });
 }
 
+// Call updateHints every second to keep the countdown live
+setInterval(updateHints, 1000);
+
 renderDateSelector();
 updateHints();
 
