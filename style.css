@@ -219,7 +219,7 @@ h3 {
 /* Style for the information button */
 .info-button {
     position: fixed;
-    bottom: 400px; /* Move it up from the bottom */
+    bottom: 200px; /* Move it up from the bottom */
     right: 20px; /* Keep it on the right */
     background-color: #ffffff; /* Button color */
     color: white;
