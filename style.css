@@ -305,3 +305,42 @@ h3 {
 .jiggle {
     animation: jiggle 0.5s infinite; /* Infinite jiggle animation */
 }
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    #app {
+        width: 95%; /* Adjust width for smaller screens */
+        height: auto; /* Allow height to adjust */
+        padding: 10px; /* Reduce padding */
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller font size for headings */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Smaller font size for subheadings */
+    }
+
+    .date-square {
+        width: 60px; /* Smaller date squares */
+        height: 60px; /* Smaller date squares */
+        font-size: 0.7em; /* Smaller font size */
+    }
+
+    .hint-box {
+        font-size: 1.2em; /* Smaller font size for hints */
+    }
+
+    .modal-content {
+        width: 90%; /* Adjust modal width for smaller screens */
+    }
+
+    .info-button {
+        width: 50px; /* Smaller info button */
+        height: 50px; /* Smaller info button */
+        font-size: 24px; /* Smaller icon size */
+    }
+}
+
+/* Additional media queries can be added for other breakpoints as needed */
