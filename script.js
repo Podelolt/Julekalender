@@ -248,4 +248,3 @@ document.getElementById("info-button").addEventListener("click", openInfoModal);
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("info-button").classList.add("jiggle"); // Start jiggle animation
 });
-
