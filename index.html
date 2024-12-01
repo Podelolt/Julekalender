@@ -6,6 +6,7 @@
     <title>Julekalender</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <!-- Intro Screen -->
@@ -16,12 +17,21 @@
 
     <!-- Main Content -->
     <div id="app" style="display: none;">
+        <h1>Martines Julekalender🎄</h1>
         <!-- Nedtelling -->
         <div id="countdown-container">
-            <h1>Martines Julekalender🎄</h1>
-            <h2>Du blir hentet om...:</h2>
-            <div id="countdown">Passer denne kvelden? Isåfall TRYKK!</div>
-            <!-- Date Selector will be appended here -->
+            <div id="countdown-container-inner">
+                <h2>Du blir hentet om...:</h2>
+                <div id="countdown">Passer denne kvelden? Isåfall TRYKK!</div>
+                <!-- Date Selector will be appended here -->
+                <div id="date-selector"></div>
+            </div>
+        </div>
+
+        <!-- New elements to show after countdown -->
+        <div id="post-countdown" style="display: none;">
+            <h2>Filmkveeeeld! 🎬</h2>
+            <button id="open-modal-button">Velg film🍿</button>
         </div>
 
         <!-- Hint -->
@@ -34,6 +44,45 @@
     <!-- Main screen where snowflakes will be displayed -->
     <div id="main-screen">
         <!-- Content of the main screen -->
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="movie-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Filmkveeeeld! 🎬</h2>
+            <p>Velg en film å se:</p>
+            <ul id="movie-list">
+                <li><a href="https://www.imdb.com/title/tt0096283/" target="_blank">Film 1: The Little Mermaid</a></li>
+                <li><a href="https://www.imdb.com/title/tt1430607/" target="_blank">Film 2: The Hunger Games: Catching Fire</a></li>
+                <li><a href="https://www.imdb.com/title/tt0314331/" target="_blank">Film 3: The Incredibles</a></li>
+                <li><a href="https://www.imdb.com/title/tt0059026/" target="_blank">Film 4: The Sound of Music</a></li>
+                <li><a href="https://www.imdb.com/title/tt0095016/" target="_blank">Film 5: The Breakfast Club</a></li>
+            </ul>
+            <button id="lock-in-button">Lock in Movie</button>
+            <div id="feedback" style="margin-top: 10px;"></div>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Button to open the information modal -->
+    <button id="info-button" class="info-button" style="display: none;">
+        ℹ️
+        <span id="notification-badge" class="notification-badge">1</span>
+    </button>
+
+    <!-- Information Modal Structure -->
+    <div id="info-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2>Generell info:</h2>
+            <p><span style="font-size: 1.2em;">
+                <strong>1.</strong>Du SKA sove hos meg så pakk det du trenge for en overnatting.<br>
+                <strong>2.</strong>Du får kveldsmat.<br>
+                <strong>3.</strong>Hvis du ska trene imårå tidlig bør du pakke treningsklær.<br>
+                <strong>4.</strong>Det blir ikkje en "sein" kveld så det går helt fint å sta opp tidlig imårå om du ska det.<br>
+                <strong>5.</strong>Legg merke te at nedtellingen e stilt 10 min lenger frem. Dette e for å passe på at me sitte klare i bilen når nedtellingen når 0😁<br>
+                <strong>6.</strong>Eg elske deg❤️</p></span>
+            <button onclick="closeInfoModal()">Close</button>
+        </div>
     </div>
 
     <script src="script.js"></script>

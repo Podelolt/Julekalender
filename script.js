@@ -27,6 +27,7 @@ function createSnowstorm() {
         });
     }
 }
+
 // Start intro
 setTimeout(() => {
     createSnowstorm();
@@ -36,14 +37,23 @@ setTimeout(() => {
         setTimeout(() => {
             introScreen.style.display = "none";
             app.style.display = "block";
-        }, 1000); // Vent til fade-out er ferdig
-    }, 4000); // Vent til snøen har samlet seg
+            document.getElementById("info-button").style.display = "block"; // Show the info button
+        }, 1000); // Wait until fade-out is complete
+    }, 4000); // Wait until the snow has gathered
 }, 1000);
 
 // Liste over datoer for nedtelling
 const eventDates = [
-    { date: new Date("2024-12-01T19:00:00"), description: "Overraskelse 1" },
+    { date: new Date("2024-12-01T19:10:00"), description: "Overraskelse 1" },
 ];
+
+// Check if the first event date has expired on page load
+const now = new Date();
+if (eventDates[0].date <= now) {
+    // Hide the countdown container and show post-countdown elements
+    document.getElementById("countdown-container").style.display = "none"; // Hide the countdown container
+    document.getElementById("post-countdown").style.display = "block"; // Show the new elements
+}
 
 // Hint schedule
 const hintSchedule = [
@@ -71,7 +81,7 @@ function renderDateSelector() {
         const button = document.createElement("div");
         button.className = "date-square";
 
-        // Format the date as "weekday d m" (e.g., "Søndag 1 Des")
+        // Format the date as "weekday d m" (e.g., "Søndag 1. Des")
         const formattedDate = `${weekdays[event.date.getDay()]} ${event.date.getDate()}. ${months[event.date.getMonth()]}`;
         
         const dateText = document.createElement("div");
@@ -92,6 +102,15 @@ function startCountdown(targetDate) {
         if (diff <= 0) {
             clearInterval(interval);
             countdownElement.textContent = "Filmkveeeeld! 🎬";
+            // Trigger confetti explosion
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+            // Show the new elements immediately after the confetti
+            document.getElementById("countdown-container").style.display = "none"; // Hide the countdown container
+            document.getElementById("post-countdown").style.display = "block"; // Show the new elements
         } else {
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
@@ -101,6 +120,26 @@ function startCountdown(targetDate) {
         }
     }, 1000);
 }
+
+// Show modal function
+function showModal() {
+    document.getElementById("movie-modal").style.display = "block";
+}
+
+// Close modal function
+function closeModal() {
+    document.getElementById("movie-modal").style.display = "none";
+}
+
+// Lock in movie selection
+document.getElementById("lock-in-button").addEventListener("click", () => {
+    const selectedMovie = document.querySelector("#movie-list a:visited");
+    if (selectedMovie) {
+        document.getElementById("feedback").textContent = `Du har valgt: ${selectedMovie.textContent}`;
+    } else {
+        document.getElementById("feedback").textContent = "Vennligst velg en film før du låser inn.";
+    }
+});
 
 // Start hints countdown
 function startHintsCountdown(targetDate, hintElement) {
@@ -185,4 +224,28 @@ function createSnowflakes() {
 
 // Call the function to create snowflakes after the intro screen
 createSnowflakes();
+
+// Open modal function when button is clicked
+document.getElementById("open-modal-button").addEventListener("click", showModal);
+
+// Function to open the information modal
+function openInfoModal() {
+    document.getElementById("info-modal").style.display = "block"; // Show the modal
+    // Remove notification badge and stop jiggle
+    document.getElementById("notification-badge").style.display = "none"; // Hide the badge
+    document.getElementById("info-button").classList.remove("jiggle"); // Stop jiggle
+}
+
+// Function to close the information modal
+function closeInfoModal() {
+    document.getElementById("info-modal").style.display = "none"; // Hide the modal
+}
+
+// Event listener for the info button
+document.getElementById("info-button").addEventListener("click", openInfoModal);
+
+// Add jiggle effect on page load
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("info-button").classList.add("jiggle"); // Start jiggle animation
+});
 

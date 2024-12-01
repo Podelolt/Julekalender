@@ -192,3 +192,110 @@ h3 {
 .hint-box {
     margin-top: 20px;
 }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #333;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* Style for the information button */
+.info-button {
+    position: fixed;
+    bottom: 400px; /* Move it up from the bottom */
+    right: 20px; /* Keep it on the right */
+    background-color: #ffffff; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Make it circular */
+    width: 50px; /* Size of the button */
+    height: 50px; /* Size of the button */
+    font-size: 24px; /* Icon size */
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 100; /* Ensure it is above other elements */
+}
+
+/* Style for the information modal */
+#info-modal {
+    position: fixed; /* Change to fixed to overlay on the app */
+    top: 35%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    width: 80%; /* Width of the modal */
+    max-width: 400px; /* Maximum width */
+    height: 60%; /* Height of the modal */
+
+    background-color: rgba(255, 255, 255, 0.95); /* Light background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    border-radius: 10px; /* Rounded corners */
+    z-index: 200; /* Ensure it is above other elements */
+    display: none; /* Initially hidden */
+}
+
+/* Modal content styling */
+.modal-content {
+    padding: 20px; /* Padding inside the modal */
+    text-align: center; /* Center text */
+    color: #333; /* Text color */
+}
+
+/* Close button styling */
+.modal-content button {
+    background-color: #e74c3c; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+    margin-top: 10px; /* Space above the button */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.modal-content button:hover {
+    background-color: #c0392b; /* Darker shade on hover */
+}
+
+/* Style for the notification badge */
+.notification-badge {
+    position: absolute;
+    top: -5px; /* Position it at the top right of the button */
+    left: -10px; /* Adjust as needed */
+    background-color: #e80101; /* Red background for the badge */
+    color: white; /* White text */
+    border-radius: 50%; /* Circular badge */
+    padding: 6px 10px; /* Padding */
+    font-size: 0.6em; /* Font size */
+    display: inline-block; /* Inline block to fit content */
+}
+
+/* Jiggle animation */
+@keyframes jiggle {
+    0% { transform: translate(0); }
+    25% { transform: translate(-2px, 0); }
+    50% { transform: translate(2px, 0); }
+    75% { transform: translate(-2px, 0); }
+    100% { transform: translate(0); }
+}
+
+/* Add jiggle class to the button */
+.jiggle {
+    animation: jiggle 0.5s infinite; /* Infinite jiggle animation */
+}
