@@ -9,11 +9,14 @@ body {
     line-height: 1.6;
     background-image: url('https://www.transparenttextures.com/patterns/bright-squares.png'); /* Festive background pattern */
     overflow: hidden;
+    width: 100vw; /* Ensure body takes full width */
+    height: 100vh; /* Ensure body takes full height */
 }
 
 #app {
-    width: 90%;
-    height: 90vh;
+    width: 90%; /* Use percentage for responsive width */
+    max-width: 400px; /* Limit max width for larger screens */
+    height: auto; /* Allow height to adjust based on content */
     margin: 0 auto;
     padding: 15px;
     background: #e74c3c; /* Festive red background */
@@ -22,7 +25,7 @@ body {
 }
 
 #countdown {
-    font-size: 1.7em; /* Justert for liten skjerm */
+    font-size: 1.5em; /* Adjusted for smaller screens */
     color: #fff;
     margin: 10px 0;
 }
@@ -39,8 +42,8 @@ body {
 .date-square {
     background: #fff8e1; /* Light festive background */
     color: #333;
-    width: 75px; /* Optimalisert for liten skjerm */
-    height: 75px;
+    width: 20%; /* Responsive width for smaller screens */
+    height: auto; /* Allow height to adjust based on content */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -51,7 +54,6 @@ body {
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
     border: 2px solid #e74c3c;
-    margin-right: 10px;
 }
 
 .date-text {
@@ -73,9 +75,8 @@ body {
     margin: 10px;
     border-radius: 10px;
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em; /* Adjusted for smaller screens */
     width: max-content;
-    margin-top: 20px;
 }
 
 /* Stack hint boxes horizontally */
@@ -103,7 +104,7 @@ body {
 }
 
 #intro-title {
-    font-size: 2em;
+    font-size: 2em; /* Adjusted for smaller screens */
     color: #fff;
     text-align: center;
     opacity: 0;
@@ -128,17 +129,46 @@ body {
     }
 }
 
-.snowflake {
-    position: absolute;
-    top: -10px;
-    font-size: 1em;
-    color: #fff;
-    animation: fall linear;
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    #app {
+        width: 95%; /* Adjust width for smaller screens */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .date-square {
+        width: 45%; /* Adjust width for date squares */
+    }
+
+    h1 {
+        font-size: 2em; /* Adjust heading size */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Adjust heading size */
+    }
+
+    h3 {
+        font-size: 1.2em; /* Adjust heading size */
+    }
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(110vh);
+@media (max-width: 480px) {
+    #app {
+        width: 100%; /* Full width on very small screens */
+        padding: 5px; /* Less padding */
+    }
+
+    .date-square {
+        width: 90%; /* Wider date squares */
+    }
+
+    #countdown {
+        font-size: 1.2em; /* Smaller font size for countdown */
+    }
+
+    .hint-box {
+        font-size: 1em; /* Smaller font size for hints */
     }
 }
 
