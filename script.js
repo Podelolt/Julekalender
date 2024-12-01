@@ -49,7 +49,7 @@ const eventDates = [
 const hintSchedule = [
     { date: new Date("2024-11-27T00:00:00"), hint: "🧦" },
     { date: new Date("2024-11-30T08:30:00"), hint: "🩲" },
-    { date: new Date("2024-12-01T08:40:00"), hint: "🎬" },
+    { date: new Date("2024-12-01T08:30:00"), hint: "🎬" },
 ];
 
 // Liste over måneder på norsk
