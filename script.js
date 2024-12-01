@@ -44,7 +44,7 @@ setTimeout(() => {
 
 // Liste over datoer for nedtelling
 const eventDates = [
-    { date: new Date("2024-12-01T19:10:00"), description: "Overraskelse 1" },
+    { date: new Date("2024-12-01T19:15:00"), description: "Overraskelse 1" },
 ];
 
 // Check if the first event date has expired on page load
@@ -225,8 +225,10 @@ function createSnowflakes() {
 // Call the function to create snowflakes after the intro screen
 createSnowflakes();
 
-// Open modal function when button is clicked
-document.getElementById("open-modal-button").addEventListener("click", showModal);
+// Open the folder link when the "velg film" button is clicked
+document.getElementById("open-modal-button").addEventListener("click", function() {
+    window.open("https://arc.net/folder/8EDDDEC7-C837-4A29-BAD2-EB77DBEA18EA", "_blank");
+});
 
 // Function to open the information modal
 function openInfoModal() {
