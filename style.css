@@ -218,19 +218,28 @@ h3 {
 
 /* Style for the information button */
 .info-button {
-    position: fixed;
-    bottom: 200px; /* Move it up from the bottom */
-    right: 20px; /* Keep it on the right */
-    background-color: #ffffff; /* Button color */
-    color: white;
-    border: none;
+    position: fixed; /* Fixed position to stay in the same place on scroll */
+    bottom: 30px; /* Distance from the bottom of the screen */
+    right: 30px; /* Distance from the right of the screen */
+    background-color: #e74c3c; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No border */
     border-radius: 50%; /* Make it circular */
-    width: 50px; /* Size of the button */
-    height: 50px; /* Size of the button */
-    font-size: 24px; /* Icon size */
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 60px; /* Size of the button */
+    height: 60px; /* Size of the button */
+    font-size: 28px; /* Icon size */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    cursor: pointer; /* Pointer cursor */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
     z-index: 100; /* Ensure it is above other elements */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for the button */
+.info-button:hover {
+    background-color: #c0392b; /* Darker shade on hover */
 }
 
 /* Style for the information modal */
@@ -277,7 +286,7 @@ h3 {
 .notification-badge {
     position: absolute;
     top: -5px; /* Position it at the top right of the button */
-    left: -10px; /* Adjust as needed */
+    right: -10px; /* Adjust as needed */
     background-color: #e80101; /* Red background for the badge */
     color: white; /* White text */
     border-radius: 50%; /* Circular badge */
