@@ -219,8 +219,8 @@ h3 {
 /* Style for the information button */
 .info-button {
     position: fixed; /* Fixed position to stay in the same place on scroll */
-    bottom: 50px; /* Distance from the bottom of the screen */
-    right: 30px; /* Distance from the right of the screen */
+    bottom: 10vh; /* Distance from the bottom of the screen */
+    right: 5vw; /* Distance from the right of the screen */
     background-color: #ffffff; /* Button color */
     color: white; /* Text color */
     border: none; /* No border */
@@ -310,7 +310,7 @@ h3 {
 @media (max-width: 768px) {
     #app {
         width: 95%; /* Adjust width for smaller screens */
-        height: auto; /* Allow height to adjust */
+        height: 95vh; /* Allow height to adjust */
         padding: 10px; /* Reduce padding */
     }
 
@@ -334,12 +334,6 @@ h3 {
 
     .modal-content {
         width: 90%; /* Adjust modal width for smaller screens */
-    }
-
-    .info-button {
-        width: 50px; /* Smaller info button */
-        height: 50px; /* Smaller info button */
-        font-size: 24px; /* Smaller icon size */
     }
 }
 
