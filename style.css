@@ -221,7 +221,7 @@ h3 {
     position: fixed; /* Fixed position to stay in the same place on scroll */
     bottom: 30px; /* Distance from the bottom of the screen */
     right: 30px; /* Distance from the right of the screen */
-    background-color: #e74c3c; /* Button color */
+    background-color: #ffffff; /* Button color */
     color: white; /* Text color */
     border: none; /* No border */
     border-radius: 50%; /* Make it circular */
