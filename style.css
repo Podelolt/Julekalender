@@ -219,7 +219,7 @@ h3 {
 /* Style for the information button */
 .info-button {
     position: fixed; /* Fixed position to stay in the same place on scroll */
-    bottom: 30px; /* Distance from the bottom of the screen */
+    bottom: 50px; /* Distance from the bottom of the screen */
     right: 30px; /* Distance from the right of the screen */
     background-color: #ffffff; /* Button color */
     color: white; /* Text color */
@@ -228,9 +228,6 @@ h3 {
     width: 60px; /* Size of the button */
     height: 60px; /* Size of the button */
     font-size: 28px; /* Icon size */
-    display: flex; /* Use flexbox for centering */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
     cursor: pointer; /* Pointer cursor */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow for depth */
     z-index: 100; /* Ensure it is above other elements */
