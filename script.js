@@ -44,7 +44,7 @@ setTimeout(() => {
 
 // Liste over datoer for nedtelling
 const eventDates = [
-    { date: new Date("2024-12-01T19:15:00"), description: "Overraskelse 1" },
+    { date: new Date("2024-12-11T20:30:00"), description: "Overraskelse 1" },
 ];
 
 // Check if the first event date has expired on page load
@@ -57,9 +57,11 @@ if (eventDates[0].date <= now) {
 
 // Hint schedule
 const hintSchedule = [
-    { date: new Date("2024-11-27T00:00:00"), hint: "🧦" },
-    { date: new Date("2024-11-30T08:30:00"), hint: "🩲" },
-    { date: new Date("2024-12-01T08:30:00"), hint: "🎬" },
+    { date: new Date("2024-12-03T10:00:00"), hint: "🌔" },
+    { date: new Date("2024-12-04T08:30:00"), hint: "👔" },
+    { date: new Date("2024-12-07T08:30:00"), hint: "🎬" },
+    { date: new Date("2024-12-08T08:30:00"), hint: "🎬" },
+    { date: new Date("2024-12-10T08:30:00"), hint: "🎬" },
 ];
 
 // Liste over måneder på norsk
@@ -89,7 +91,14 @@ function renderDateSelector() {
         dateText.textContent = formattedDate;
 
         button.appendChild(dateText);
-        button.addEventListener("click", () => startCountdown(event.date));
+        button.addEventListener("click", () => {
+            startCountdown(event.date);
+            const meetMeElement = document.getElementById("meet-me-element");
+            // Delay showing the element by 1 second
+            setTimeout(() => {
+                meetMeElement.style.display = "block"; // Show the "Møt meg om" element after 1 second
+            }, 1000); // 1000 milliseconds = 1 second
+        });
         dateSelector.appendChild(button);
     });
 }
