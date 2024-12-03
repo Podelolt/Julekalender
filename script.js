@@ -44,7 +44,7 @@ setTimeout(() => {
 
 // Liste over datoer for nedtelling
 const eventDates = [
-    { date: new Date("2024-12-03T10:00:00"), description: "Overraskelse 1" },
+    { date: new Date("2024-12-01T19:20:00"), description: "Overraskelse 1" },
 ];
 
 // Check if the first event date has expired on page load
@@ -57,9 +57,9 @@ if (eventDates[0].date <= now) {
 
 // Hint schedule
 const hintSchedule = [
-    { date: new Date("2024-12-02T09:00:00"), hint: "🎽" },
-    { date: new Date("2024-12-02T16:00:00"), hint: "💧" },
-    { date: new Date("2024-12-02T21:30:00"), hint: "🏃🏼‍♂️‍➡️🏃🏻‍♀️‍➡️🌊☀️" },
+    { date: new Date("2024-11-27T00:00:00"), hint: "🧦" },
+    { date: new Date("2024-11-30T08:30:00"), hint: "🩲" },
+    { date: new Date("2024-12-01T08:30:00"), hint: "🎬" },
 ];
 
 // Liste over måneder på norsk
@@ -101,7 +101,7 @@ function startCountdown(targetDate) {
         const diff = targetDate - now;
         if (diff <= 0) {
             clearInterval(interval);
-            countdownElement.textContent = "Favorittløpeturen min + DAAAMP";
+            countdownElement.textContent = "Filmkveeeeld! 🎬";
             // Trigger confetti explosion
             confetti({
                 particleCount: 100,
