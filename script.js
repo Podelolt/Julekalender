@@ -259,3 +259,13 @@ document.getElementById("info-button").addEventListener("click", openInfoModal);
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("info-button").classList.add("jiggle"); // Start jiggle animation
 });
+
+// script.js
+
+// Function to open the link when the button is clicked
+function openGameLink() {
+    window.open("https://podelolt.github.io/solitaire-js/", "_blank");
+}
+
+// Event listener to trigger the function when the button is clicked
+document.getElementById("spillknapp").addEventListener("click", openGameLink);
