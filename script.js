@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Function to open the link when the button is clicked
 function openGameLink() {
-    window.open("https://podelolt.github.io/mini_spill/", "_blank");
+    window.open("https://quinten.github.io/black-hole-square/", "_blank");
 }
 
 // Event listener to trigger the function when the button is clicked
