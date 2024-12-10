@@ -44,7 +44,7 @@ setTimeout(() => {
 
 // Liste over datoer for nedtelling
 const eventDates = [
-    { date: new Date("2024-12-11T20:30:00"), description: "Overraskelse 1" },
+    { date: new Date("2024-12-11T21:00:00"), description: "Overraskelse 1" },
 ];
 
 // Check if the first event date has expired on page load
