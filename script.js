@@ -252,8 +252,8 @@ function closeInfoModal() {
     document.getElementById("info-modal").style.display = "none"; // Hide the modal
 }
 
-// Event listener for the info button
-document.getElementById("info-button").addEventListener("click", openInfoModal);
+// Update the event listener for the new info button structure
+document.querySelector(".info-button .toggle input").addEventListener("click", openInfoModal);
 
 // Add jiggle effect on page load
 document.addEventListener("DOMContentLoaded", () => {

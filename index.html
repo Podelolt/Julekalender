@@ -65,11 +65,15 @@
     </div>
 
     <!-- Button to open the information modal -->
-    <button id="info-button" class="info-button" style="display: none;">
-        ℹ️
-        <span id="notification-badge" class="notification-badge">1</span>
-    </button>
-
+    <div id="info-button" class="info-button" style="display: none;">
+      <div class="toggle">
+        <input type="checkbox">
+        <span class="button"></span>
+        <span class="label">ℹ︎</span>
+        <span id="notification-badge" class="notification-badge"><strong>1</strong></span>
+      </div>
+    </div>
+   
     <!-- Information Modal Structure -->
     <div id="info-modal" class="modal" style="display: none;">
         <div class="modal-content">
