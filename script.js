@@ -59,11 +59,11 @@ if (eventDates[0].date <= now) {
 
 // Hint schedule
 const hintSchedule = [
-    { date: new Date("2024-12-03T10:00:00"), hint: "🌔" },
-    { date: new Date("2024-12-04T08:30:00"), hint: "👔" },
-    { date: new Date("2024-12-05T08:30:00"), hint: "🪪" },
-    { date: new Date("2024-12-08T08:30:00"), hint: "💄" },
-    { date: new Date("2024-12-10T08:30:00"), hint: "🍻" },
+    { date: new Date("2024-12-14T08:30:00"), hint: "?" },
+    { date: new Date("2024-12-15T08:30:00"), hint: "?" },
+    { date: new Date("2024-12-16T08:30:00"), hint: "?" },
+    { date: new Date("2024-12-16T08:30:00"), hint: "?" },
+    { date: new Date("2024-12-16T08:30:00"), hint: "?" },
 ];
 
 // Liste over måneder på norsk
