@@ -59,11 +59,11 @@ if (eventDates[0].date <= now) {
 
 // Hint schedule
 const hintSchedule = [
-    { date: new Date("2024-12-14T08:30:00"), hint: "?" },
-    { date: new Date("2024-12-15T08:30:00"), hint: "?" },
-    { date: new Date("2024-12-16T08:30:00"), hint: "?" },
-    { date: new Date("2024-12-16T08:30:00"), hint: "?" },
-    { date: new Date("2024-12-16T08:30:00"), hint: "?" },
+    { date: new Date("2024-12-14T08:30:00"), hint: "🧡" },
+    { date: new Date("2024-12-15T08:30:00"), hint: "🍵" },
+    { date: new Date("2024-12-16T08:30:00"), hint: "🌾" },
+    { date: new Date("2024-12-16T08:30:00"), hint: "🪴" },
+    { date: new Date("2024-12-16T08:30:00"), hint: "🍳" },
 ];
 
 // Liste over måneder på norsk
@@ -112,7 +112,7 @@ function startCountdown(targetDate) {
         const diff = targetDate - now;
         if (diff <= 0) {
             clearInterval(interval);
-            countdownElement.textContent = "Filmkveeeeld! 🎬";
+            countdownElement.textContent = "Tidlig kafebesøk!🥰";
             // Trigger confetti explosion
             confetti({
                 particleCount: 100,
@@ -238,7 +238,7 @@ createSnowflakes();
 
 // Open the folder link when the "velg film" button is clicked
 document.getElementById("open-modal-button").addEventListener("click", function() {
-    window.open("https://arc.net/folder/8EDDDEC7-C837-4A29-BAD2-EB77DBEA18EA", "_blank");
+    window.open("https://www.kafeoransjeriet.no/", "_blank");
 });
 
 // Function to open the information modal
