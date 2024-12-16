@@ -62,8 +62,8 @@ const hintSchedule = [
     { date: new Date("2024-12-14T08:30:00"), hint: "🧡" },
     { date: new Date("2024-12-15T08:30:00"), hint: "🍵" },
     { date: new Date("2024-12-16T08:30:00"), hint: "🌾" },
-    { date: new Date("2024-12-16T08:30:00"), hint: "🪴" },
-    { date: new Date("2024-12-16T08:30:00"), hint: "🍳" },
+    { date: new Date("2024-12-17T08:30:00"), hint: "🪴" },
+    { date: new Date("2024-12-18T08:30:00"), hint: "🍳" },
 ];
 
 // Liste over måneder på norsk
