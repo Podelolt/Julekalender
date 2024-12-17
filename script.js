@@ -44,7 +44,7 @@ setTimeout(() => {
 
 // Liste over datoer for nedtelling
 const eventDates = [
-    { date: new Date("2024-12-18T09:00:00"), description: "Overraskelse 1" },
+    { date: new Date("2024-12-17T23:30:00"), description: "Overraskelse 1" },
 ];
 
 // Check if the first event date has expired on page load
@@ -61,7 +61,7 @@ const hintSchedule = [
     { date: new Date("2024-12-15T08:30:00"), hint: "🍵" },
     { date: new Date("2024-12-16T08:30:00"), hint: "🌾" },
     { date: new Date("2024-12-17T08:30:00"), hint: "🧱" },
-    { date: new Date("2024-12-18T08:30:00"), hint: "🍳" },
+    { date: new Date("2024-12-17T08:30:00"), hint: "🍳" },
 ];
 
 // Liste over måneder på norsk
